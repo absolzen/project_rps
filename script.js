@@ -94,5 +94,3 @@ function playGame() {
   // declare winner
   winner(computerScore, humanScore);
 }
-
-playGame();
