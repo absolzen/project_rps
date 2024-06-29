@@ -30,7 +30,20 @@ function playGame() {
     let humanChoice = prompt("Enter your choice (rock, paper or scissors): ");
     return humanChoice.toLowerCase();
   }
+  
+  // Declare winner of whole game
+  function winner(compScore, humScore) {
+    console.log("Thanks for playing! And the winner is...");
 
+    if (compScore == humScore) {
+      console.log("No one! It's a tie");
+    } else if (compScore > humScore) {
+      console.log("Computer! Too bad.");
+    } else {
+      console.log("You! Congratulations!");
+    }
+  }
+  
   // declare scores variables
   let humanScore = 0;
   let computerScore = 0;
@@ -43,7 +56,6 @@ function playGame() {
       if (computerChoice == "paper") {
         console.log("You lose! Paper beats Rock");
         computerScore++;
-
       } else {
         console.log("You win! Rock beats scissors");
         humanScore++;
@@ -66,14 +78,21 @@ function playGame() {
       }
     }
 
+    // summary after round
     console.log(`Your score: ${humanScore}`);
     console.log(`Computer score: ${computerScore}`);
   }
 
-  // get choices and play round
+  // get choices and play round 5 times
   // let humanSelection = getHumanChoice();
   // let computerSelection = getComputerChoice();
+  // need to call functions to get choices, variables doesn't change during rounds
   for (i = 0; i < 5; i++) {
     playRound(getHumanChoice(), getComputerChoice());
   }
+
+  // declare winner
+  winner(computerScore, humanScore);
 }
+
+playGame();
