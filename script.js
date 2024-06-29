@@ -32,3 +32,28 @@ function getHumanChoice() {
 // declare scores variables
 let humanScore = 0;
 let computerScore = 0;
+
+// check  winning conditions and log appriopriate message
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice == computerChoice) {
+    console.log("It's a tie!");
+  } else if (humanChoice == "rock") {
+    if (computerChoice == "paper") {
+      console.log("You lose! Paper beats Rock");
+    } else {
+      console.log("You win! Rock beats scissors");
+    }
+  } else if (humanChoice == "paper") {
+    if (computerChoice == "rock") {
+      console.log("You win! Paper beats rock");
+    } else {
+      console.log("You lose! Scissors beat paper");
+    }
+  } else if (humanChoice == "scissors") {
+    if (computerChoice == "rock") {
+      console.log("You lose! Rock beats Scissors");
+    } else {
+      console.log("You win! Scissors beat paper");
+    }
+  }
+}
