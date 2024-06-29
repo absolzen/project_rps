@@ -23,5 +23,9 @@ function convertToChoice(randChoice) {
   }
 }
 
-
+// get human choice and return it lowercase
+function getHumanChoice() {
+  let humanChoice = prompt("Enter your choice (rock, paper or scissors): ");
+  return humanChoice.toLowerCase();
+}
 
