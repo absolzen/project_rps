@@ -25,12 +25,7 @@ function playGame() {
     return convertToChoice(randInt);
   }
 
-  // get human choice and return it lowercase
-  function getHumanChoice() {
-    let humanChoice = prompt("Enter your choice (rock, paper or scissors): ");
-    return humanChoice.toLowerCase();
-  }
-  
+    
   // Declare winner of whole game
   function winner(compScore, humScore) {
     console.log("Thanks for playing! And the winner is...");
@@ -84,11 +79,20 @@ function playGame() {
   }
 
   // reference buttons
-  const btnRock = document.querySelector('.rock');
-  const btnPaper = document.querySelector('.paper');
-  const btnScissors = document.querySelector('.scissors');
+  const btnRock = document.querySelector(".rock");
+  const btnPaper = document.querySelector(".paper");
+  const btnScissors = document.querySelector(".scissors");
 
-  
-  // declare winner
-  winner(computerScore, humanScore);
+  // add event listeners to buttons
+  btnRock.addEventListener("click", (e) => {
+    playRound("rock", getComputerChoice());
+  }); 
+  btnPaper.addEventListener("click", (e) => {
+    playRound("paper", getComputerChoice());
+  });
+  btnScissors.addEventListener("click", (e) => {
+    playRound("scissors", getComputerChoice());
+  });
 }
+
+playGame();
