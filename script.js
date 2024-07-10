@@ -74,9 +74,7 @@ function playGame() {
     }
 
     humanScoreSpan.textContent = `${humanScore}`;
-    // summary after round
-    console.log(`Your score: ${humanScore}`);
-    console.log(`Computer score: ${computerScore}`);
+    computerScoreSpan.textContent = `${computerScore}`;
   }
 
   // reference buttons
@@ -89,6 +87,7 @@ function playGame() {
   const humanRps = document.querySelector(".humanRps");
   const computerRps = document.querySelector(".computerRps");
   const humanScoreSpan = document.querySelector(".humanScore > span");
+  const computerScoreSpan = document.querySelector(".computerScore > span");
 
   // add event listeners to buttons
   btnRock.addEventListener("click", (e) => {
