@@ -28,14 +28,14 @@ function playGame() {
     
   // Declare winner of whole game
   function winner(compScore, humScore) {
-    console.log("Thanks for playing! And the winner is...");
-
-    if (compScore == humScore) {
-      gameSummary.textContent = "No one! It's a tie";
-    } else if (compScore > humScore) {
-      gameSummary.textContent = "Computer! Too bad.";
+    gameSummary.textContent = "Thanks for playing! And the winner is...";
+    const whoWon = document.createElement("p");
+    gameSummary.appendChild(whoWon);
+    
+    if (compScore > humScore) {
+      whoWon.textContent = "Computer! Too bad...";
     } else {
-      gameSummary.textContent = "You! Congratulations!";
+      whoWon.textContent = "You! Congratulations!";
     }
   }
   
@@ -75,6 +75,13 @@ function playGame() {
 
     humanScoreSpan.textContent = `${humanScore}`;
     computerScoreSpan.textContent = `${computerScore}`;
+    // 
+    if (humanScore === 5 || computerScore === 5) {
+      winner(computerScore, humanScore);
+      btnRock.setAttribute("hidden", "true");
+      btnPaper.setAttribute("hidden", "true");
+      btnScissors.setAttribute("hidden", "true");
+    }
   }
 
   // reference buttons
@@ -100,6 +107,8 @@ function playGame() {
   btnScissors.addEventListener("click", (e) => {
     playRound("scissors", getComputerChoice());
   });
+
 }
 
 playGame();
+
