@@ -83,13 +83,6 @@ function playGame() {
     console.log(`Computer score: ${computerScore}`);
   }
 
-  // get choices and play round 5 times
-  // let humanSelection = getHumanChoice();
-  // let computerSelection = getComputerChoice();
-  // need to call functions to get choices, variables doesn't change during rounds
-  for (i = 0; i < 5; i++) {
-    playRound(getHumanChoice(), getComputerChoice());
-  }
 
   // declare winner
   winner(computerScore, humanScore);
