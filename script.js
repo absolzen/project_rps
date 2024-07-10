@@ -46,29 +46,29 @@ function playGame() {
   // check  winning conditions and log appropriate message
   function playRound(humanChoice, computerChoice) {
     if (humanChoice == computerChoice) {
-      console.log("It's a tie!");
+      roundResult.textContent = "It's a tie!";
     } else if (humanChoice == "rock") {
       if (computerChoice == "paper") {
-        console.log("You lose! Paper beats Rock");
+        roundResult.textContent = "You lose! Paper beats Rock";
         computerScore++;
       } else {
-        console.log("You win! Rock beats scissors");
+        roundResult.textContent = "You win! Rock beats scissors";
         humanScore++;
       }
     } else if (humanChoice == "paper") {
       if (computerChoice == "rock") {
-        console.log("You win! Paper beats rock");
+        roundResult.textContent = "You win! Paper beats rock";
         humanScore++;
       } else {
-        console.log("You lose! Scissors beat paper");
+        roundResult.textContent = "You lose! Scissors beat paper";
         computerScore++;
       }
     } else if (humanChoice == "scissors") {
       if (computerChoice == "rock") {
-        console.log("You lose! Rock beats Scissors");
+        roundResult.textContent = "You lose! Rock beats Scissors";
         computerScore++;
       } else {
-        console.log("You win! Scissors beat paper");
+        roundResult.textContent = "You win! Scissors beat paper";
         humanScore++;
       }
     }
