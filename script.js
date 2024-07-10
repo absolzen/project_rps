@@ -5,9 +5,11 @@ function getRandomThree() {
   return computerChoiceInt; 
 }
 
+const computerRps = document.querySelector(".computerRps");
 // convert random int to one of rps choices
 function convertToChoice(randChoice) {
   if (randChoice == 0) {
+    computerRps.setAttribute("src", "./images/rock.png");
     return "rock";
   } else if (randChoice == 1) {
     return "paper";
@@ -92,7 +94,6 @@ function playGame() {
   // reference elements that display dynamic content
   const roundResult = document.querySelector(".result");
   const humanRps = document.querySelector(".humanRps");
-  const computerRps = document.querySelector(".computerRps");
   const humanScoreSpan = document.querySelector(".humanScore > span");
   const computerScoreSpan = document.querySelector(".computerScore > span");
   const gameSummary = document.querySelector(".gameSummary");
