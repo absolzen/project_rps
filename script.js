@@ -5,6 +5,7 @@ function getRandomThree() {
   return computerChoiceInt; 
 }
 
+// TODO: add all images
 const computerRps = document.querySelector(".computerRps");
 // convert random int to one of rps choices
 function convertToChoice(randChoice) {
@@ -47,6 +48,10 @@ function playGame() {
 
   // check  winning conditions and log appropriate message
   function playRound(humanChoice, computerChoice) {
+    // show chosen items
+    humanRps.removeAttribute("hidden");
+    computerRps.removeAttribute("hidden");
+
     if (humanChoice == computerChoice) {
       roundResult.textContent = "It's a tie!";
     } else if (humanChoice == "rock") {
@@ -77,12 +82,13 @@ function playGame() {
 
     humanScoreSpan.textContent = `${humanScore}`;
     computerScoreSpan.textContent = `${computerScore}`;
-    // 
+
+    // hide elements on finished game and display winner
     if (humanScore === 5 || computerScore === 5) {
       winner(computerScore, humanScore);
-      btnRock.setAttribute("hidden", "true");
-      btnPaper.setAttribute("hidden", "true");
-      btnScissors.setAttribute("hidden", "true");
+      btnRock.setAttribute("hidden", "");
+      btnPaper.setAttribute("hidden", "");
+      btnScissors.setAttribute("hidden", "");
     }
   }
 
@@ -98,6 +104,7 @@ function playGame() {
   const computerScoreSpan = document.querySelector(".computerScore > span");
   const gameSummary = document.querySelector(".gameSummary");
 
+  // TODO: add images
   // add event listeners to buttons
   btnRock.addEventListener("click", (e) => {
     playRound("rock", getComputerChoice());
