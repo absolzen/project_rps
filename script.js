@@ -73,6 +73,7 @@ function playGame() {
       }
     }
 
+    humanScoreSpan.textContent = `${humanScore}`;
     // summary after round
     console.log(`Your score: ${humanScore}`);
     console.log(`Computer score: ${computerScore}`);
@@ -82,6 +83,12 @@ function playGame() {
   const btnRock = document.querySelector(".rock");
   const btnPaper = document.querySelector(".paper");
   const btnScissors = document.querySelector(".scissors");
+
+  // reference elements that display dynamic content
+  const roundResult = document.querySelector(".result");
+  const humanRps = document.querySelector(".humanRps");
+  const computerRps = document.querySelector(".computerRps");
+  const humanScoreSpan = document.querySelector(".humanScore > span");
 
   // add event listeners to buttons
   btnRock.addEventListener("click", (e) => {
