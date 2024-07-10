@@ -31,11 +31,11 @@ function playGame() {
     console.log("Thanks for playing! And the winner is...");
 
     if (compScore == humScore) {
-      console.log("No one! It's a tie");
+      gameSummary.textContent = "No one! It's a tie";
     } else if (compScore > humScore) {
-      console.log("Computer! Too bad.");
+      gameSummary.textContent = "Computer! Too bad.";
     } else {
-      console.log("You! Congratulations!");
+      gameSummary.textContent = "You! Congratulations!";
     }
   }
   
@@ -88,6 +88,7 @@ function playGame() {
   const computerRps = document.querySelector(".computerRps");
   const humanScoreSpan = document.querySelector(".humanScore > span");
   const computerScoreSpan = document.querySelector(".computerScore > span");
+  const gameSummary = document.querySelector(".gameSummary");
 
   // add event listeners to buttons
   btnRock.addEventListener("click", (e) => {
