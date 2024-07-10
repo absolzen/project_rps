@@ -100,6 +100,7 @@ function playGame() {
   // add event listeners to buttons
   btnRock.addEventListener("click", (e) => {
     playRound("rock", getComputerChoice());
+    humanRps.setAttribute("src", "./images/rock.png");
   }); 
   btnPaper.addEventListener("click", (e) => {
     playRound("paper", getComputerChoice());

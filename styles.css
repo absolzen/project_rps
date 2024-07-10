@@ -22,3 +22,9 @@ button {
 .scissors {
   background-image: url("./images/scissor.png");
 }
+
+.humanRps,
+.computerRps {
+  width: 150px;
+  height: 150px;
+}
