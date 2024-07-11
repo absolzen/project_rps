@@ -105,7 +105,6 @@ function playGame() {
   const computerScoreSpan = document.querySelector(".computerScore > span");
   const gameSummary = document.querySelector(".gameSummary");
 
-  // TODO: add images
   // add event listeners to buttons
   btnRock.addEventListener("click", (e) => {
     playRound("rock", getComputerChoice());
@@ -113,9 +112,11 @@ function playGame() {
   }); 
   btnPaper.addEventListener("click", (e) => {
     playRound("paper", getComputerChoice());
+    humanRps.setAttribute("src", "./images/paper-roll.png");
   });
   btnScissors.addEventListener("click", (e) => {
     playRound("scissors", getComputerChoice());
+    humanRps.setAttribute("src", "./images/scissor.png");
   });
 
 }
