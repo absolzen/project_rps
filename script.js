@@ -5,7 +5,6 @@ function getRandomThree() {
   return computerChoiceInt; 
 }
 
-// TODO: add all images
 const computerRps = document.querySelector(".computerRps");
 // convert random int to one of rps choices
 function convertToChoice(randChoice) {
@@ -13,8 +12,10 @@ function convertToChoice(randChoice) {
     computerRps.setAttribute("src", "./images/rock.png");
     return "rock";
   } else if (randChoice == 1) {
+    computerRps.setAttribute("src", "./images/paper-roll.png");
     return "paper";
   } else {
+    computerRps.setAttribute("src", "./images/scissor.png");
     return "scissors";
   }
 }
