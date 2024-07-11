@@ -52,6 +52,7 @@ function playGame() {
     // show chosen items
     humanRps.removeAttribute("hidden");
     computerRps.removeAttribute("hidden");
+    
 
     if (humanChoice == computerChoice) {
       roundResult.textContent = "It's a tie!";
